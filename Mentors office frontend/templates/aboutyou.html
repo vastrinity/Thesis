@@ -1,0 +1,243 @@
+{% extends "base.html" %}
+
+{%block content%}
+<style>
+
+
+.box select {
+  background-color: -webkit-linear-gradient(left, #b224ef, #7579ff);
+  color: rgb(225, 76, 208);
+  padding: 12px;
+  width: 250px;
+  border: none;
+
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+.box::before {
+  content: "\f13a";
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+ 
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;500&display=swap");
+
+
+
+.card {
+  background-color: #222831;
+  height: auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  color: white;
+}
+
+
+
+.card__image {
+  height: auto;
+  width: auto;
+  border-radius: 50%;
+  border: 5px solid #272133;
+  margin-top: 20px;
+  box-shadow: 0 10px 50px rgba(235, 25, 110, 1);
+}
+
+
+.draw-border {
+  box-shadow: inset 0 0 0 4px -webkit-linear-gradient(left, #7579ff, #b224ef);
+  color: #58afd1;
+  -webkit-transition: color 0.25s 0.0833333333s;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+
+.draw-border::before,
+.draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0rem;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.draw-border::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+
+.draw-border::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+
+
+.submit{
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  background: -webkit-linear-gradient(left, #7579ff, #b224ef);
+}
+
+.submit:hover{
+  background: -webkit-linear-gradient(left, #b224ef, #7579ff);
+}
+button{
+  display: block;
+  margin: 0 auto;
+  width: 260px;
+  height: 36px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+</style>
+<form action="{{ url_for('aboutyou') }}" method="post" enctype="multipart/form-data">
+<table style="margin-top: 10%; position:absolute ;margin-left: 10%; ">
+    <tr>
+        <td>
+
+      
+   
+<fieldset style="width:50% ;  border-radius: 5px;">
+    <legend>Let's tack about you!</legend>
+    <div class="box">
+    <label for="gender">gender</label>
+    <select name="gender" id="gender"  >
+        
+        <option value="male"  >Male</option>
+            <option value="female" >Female</option>
+            <option value="other"  >Other</option>
+    </select>
+    </div>
+
+    <div class="box">
+        <label for="work">work</label>
+        <select name="work" id="work" >
+            
+            <option value="yes" >yes</option>
+                <option value="no" >no</option>
+                
+        </select>
+    </div>
+
+    <div class="box">
+        <label for="yearofstudies">Year of studies</label>
+        <select name="yearofstudies" id="yearofstudies" >
+            <option value="1" >1</option>
+            <option value="2" >2</option>
+            <option value="3" >3</option>
+            <option value="4" >4</option>
+            <option value="more" >more</option>
+                
+        </select>
+    </div>
+
+   
+
+    <div class="box">
+        <label for="first_major_choice">First major choice</label>
+        <select name="first_major_choice" id="first_major_choice" >
+            <option value="Telecommunications & Networks (T&N)" >Telecommunications & Networks (T&N)</option>
+            <option value="Software & Data Systems (SDS)" >Software & Data Systems (SDS)</option>
+            <option value="Computantial Infrastructures & Services (CIS)" >Computantial Infrastructures & Services (CIS)</option>
+           
+                
+        </select>
+    </div>
+
+    <div class="box">
+        <label for="second_major_choice">Second major choice</label>
+        <select name="second_major_choice" id="second_major_choice" >
+            <option value="Telecommunications" >Telecommunications</option>
+            <option value="Networks (T&N)" >Networks (T&N)</option>
+            <option value="INFORMATION SYSTEMS" >INFORMATION SYSTEMS</option>
+            <option value="DATA MANAGEMENT" >DATA MANAGEMENT</option>
+            <option value="Computantial Infrastructures & Services (CIS)" >Computantial Infrastructures & Services (CIS)</option>
+            <option value="DIGITAL SERVICES" >DIGITAL SERVICES</option>
+           
+                
+        </select>
+    </div>
+
+    <div class="box">
+        <label for="security_choice">Security choice</label>
+        <select name="security_choice" id="security_choice" >
+            <option value="yes" >yes</option>
+                <option value="no" >no</option>
+                
+        </select>
+    </div>
+
+    <div class="box">
+        <label for="pedagogical_adequacy">Pedagogical adequacy</label>
+        <select name="pedagogical_adequacy" id="pedagogical_adequacy" >
+            <option value="yes" >yes</option>
+                <option value="no" >no</option>
+                
+        </select>
+    </div>
+
+
+</fieldset>
+</td>
+<td>
+<fieldset style="width:50% ;  border-radius: 5px;">
+    <div class="container">
+        <div class="card">
+          <img src="https://lh3.googleusercontent.com/ytP9VP86DItizVX2YNA-xTYzV09IS7rh4WexVp7eilIcfHmm74B7odbcwD5DTXmL0PF42i2wnRKSFPBHlmSjCblWHDCD2oD1oaM1CGFcSd48VBKJfsCi4bS170PKxGwji8CPmehwPw=w200-h247-no" alt="Person" class="card__image">
+          <p class="card__name">Photo profil</p>
+         
+         
+          
+          
+      
+        </div>
+       
+
+</fieldset>
+</td>
+</tr>
+</table>
+<div><button type="submit" class="submit">save</button></div>
+
+</form>
+
+{% endblock %}

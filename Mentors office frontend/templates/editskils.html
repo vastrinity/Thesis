@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{%block content%}
+<style>
+  
+  button{
+  display: block;
+  margin: 0 auto;
+  width: 260px;
+  height: 36px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.submit{
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  background: -webkit-linear-gradient(left, #7579ff, #b224ef);
+}
+
+.submit:hover{
+  background: -webkit-linear-gradient(left, #b224ef, #7579ff);
+}
+
+.cell{
+ 
+  
+  font-size:medium;
+  
+  
+}
+.skil{
+    margin-top: 4%;
+}
+.tabl{
+text-align: center;
+padding-left: 40%;
+}
+
+</style>
+<form action="{{ url_for('editskils') }}" method="post">
+<table style="margin-left: 20%;">
+    <tr>
+        <td>
+
+       
+<fieldset style="margin-top: 15%; margin-left: 10%;">
+    <legend>I intend to manage the difficulties I had as such:</legend>
+    
+    <table>
+
+        <tr> <div class="skil" style="margin-bottom:4% ;">
+            <td><i >difficulties</i></td>
+        <td><i class="tabl">Before</i></td>
+        <td><i class="tabl">Now</i></td>
+           </div></tr>
+
+        <tr> <div class="skil">
+        <td><i class="cell">Stress</i></td>
+    <td> <input type="range" id="vol" name="StressB" min="0" max="100" value="{{ skil_found.StressB }}"></td>
+    <td><input type="range" id="vol" name="StressA" min="0" max="100" value="{{ skil_found.StressA }}"></td>
+       </div></tr>
+
+       <tr> <div class="skil">
+        <td><i class="cell">LuckOfKnowledge</i></td>
+    <td> <input type="range" id="vol" name="KnowledgeB" min="0" max="100" value="{{ skil_found.KnowledgeB }}"></td>
+    <td><input type="range" id="vol" name="KnowledgeA" min="0" max="100" value="{{ skil_found.KnowledgeA }}"></td>
+       </div></tr>
+
+       <tr> <div class="skil">
+        <td><i class="cell">Time management</i></td>
+    <td> <input type="range" id="vol" name="TimeB" min="0" max="100" value="{{ skil_found.TimeB }}"></td>
+    <td><input type="range" id="vol" name="TimeA" min="0" max="100" value="{{ skil_found.TimeA }}"></td>
+       </div></tr>
+
+       <tr> <div class="skil">
+        <td><i class="cell">Distance</i></td>
+    <td> <input type="range" id="vol" name="DistanceB" min="0" max="100" value="{{ skil_found.DistanceB }}"></td>
+    <td><input type="range" id="vol" name="DistanceA" min="0" max="100" value="{{ skil_found.DistanceA }}"></td>
+       </div></tr>
+       
+       <tr> <div class="skil">
+        <td><i class="cell">Lack Of Time</i></td>
+    <td> <input type="range" id="vol" name="LackB" min="0" max="100" value="{{ skil_found.LackB }}"></td>
+    <td><input type="range" id="vol" name="LackA" min="0" max="100" value="{{ skil_found.LackA }}"></td>
+       </div></tr>
+
+       <tr> <div class="skil">
+        <td><i class="cell">Another</i></td>
+    <td> <input type="range" id="vol" name="AnotherB" min="0" max="100" value="{{ skil_found.AnotherB }}"></td>
+    <td><input type="range" id="vol" name="AnotherA" min="0" max="100" value="{{ skil_found.AnotherA }}"></td>
+       </div></tr>
+    
+</table>
+</td>
+
+<td> </td>
+<td>
+</fieldset>
+
+<fieldset style="margin-top: 15%; margin-left: 10%;">
+    <legend>Skills that will help me achieve my goal:</legend>
+    <table>
+
+        <tr> <div class="skil">
+            <td><input type="text" name="skil1" placeholder="My skill" value="{{ skil_found.skil1 }}"></td>
+            <td> <input type="range" id="vol" name="skilr1" min="0" max="100" value="{{ skil_found.skilr1 }}"></td>
+         </div></tr>
+         <tr> <div class="skil">
+            <td><input type="text" name="skil2" placeholder="My skill" value="{{ skil_found.skil2 }}"></td>
+            <td> <input type="range" id="vol" name="skilr2" min="0" max="100" value="{{ skil_found.skilr2 }}"></td>
+         </div></tr>
+         <tr> <div class="skil">
+            <td><input type="text" name="skil3" placeholder="My skill" value="{{ skil_found.skil3 }}"></td>
+            <td> <input type="range" id="vol" name="skilr3" min="0" max="100" value="{{ skil_found.skilr3 }}"></td>
+         </div></tr>
+         <tr> <div class="skil">
+            <td><input type="text" name="skil4" placeholder="My skill" value="{{ skil_found.skil4 }}"></td>
+            <td> <input type="range" id="vol" name="skilr4" min="0" max="100" value="{{ skil_found.skilr4 }}"></td>
+         </div></tr>
+         <tr> <div class="skil">
+            <td><input type="text" name="skil5" placeholder="My skill" value="{{ skil_found.skil5 }}"></td>
+            <td> <input type="range" id="vol" name="skilr5" min="0" max="100" value="{{ skil_found.skilr5 }}"></td>
+         </div></tr>
+         <tr> <div class="skil">
+            <td><input type="text" name="skil6" placeholder="My skill" value="{{ skil_found.skil6 }}"></td>
+            <td> <input type="range" id="vol" name="skilr6" min="0" max="100" value="{{ skil_found.skilr6 }}"></td>
+         </div></tr>
+    </table>
+</fieldset>
+</td>
+</tr>
+</table>
+<div><button type="submit" class="submit">Update</button></div>
+</form>
+
+{% endblock %}

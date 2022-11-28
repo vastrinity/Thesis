@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{%block content%}
+<style>
+    .course{
+    display: block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid rgba(139, 139, 139, .3);
+    color: #adadad;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    padding: 2px 6px 2px 2px;
+    text-align: center;
+    }
+    .field{
+        border-radius: 10px;
+        width: 50%;
+        align-items: center;
+        margin: auto;
+        margin-top: 5%;
+    }
+</style>
+
+<fieldset class="field">
+    <legend>I would suggest you try to succeed in the courses:</legend>
+    {% for i in course_found %}
+    <li class="course">{{ i }}</li>
+    {% endfor %}
+    
+</fieldset>
+
+
+{% endblock %}

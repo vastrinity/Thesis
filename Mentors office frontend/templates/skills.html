@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{%block content%}
+<style>
+  
+  button{
+  display: block;
+  margin: 0 auto;
+  width: 260px;
+  height: 36px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.submit{
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  background: -webkit-linear-gradient(left, #7579ff, #b224ef);
+}
+
+.submit:hover{
+  background: -webkit-linear-gradient(left, #b224ef, #7579ff);
+}
+
+.cell{
+ 
+  
+  font-size:medium;
+  
+  
+}
+.skil{
+    margin-top: 4%;
+}
+.tabl{
+text-align: center;
+padding-left: 40%;
+}
+
+</style>
+<form action="{{ url_for('skills') }}" method="post">
+<table>
+    <tr>
+        <td>
+
+       
+<fieldset style="margin-top: 15%; margin-left: 10%;">
+    <legend>I intend to manage the difficulties I had as such:</legend>
+    
+    <table>
+
+        <tr> <div class="skil" style="margin-bottom:4% ;">
+            <td><i >difficulties</i></td>
+        <td><i class="tabl">Before</i></td>
+        <td><i class="tabl">Now</i></td>
+           </div></tr>
+
+        <tr> <div class="skil">
+        <td><i class="cell">Stress</i></td>
+    <td> <input type="range" id="vol" name="StressB" min="0" max="100"></td>
+    <td><input type="range" id="vol" name="StressA" min="0" max="100"></td>
+       </div></tr>
+
+       <tr> <div class="skil">
+        <td><i class="cell">LuckOfKnowledge</i></td>
+    <td> <input type="range" id="vol" name="KnowledgeB" min="0" max="100"></td>
+    <td><input type="range" id="vol" name="KnowledgeA" min="0" max="100"></td>
+       </div></tr>
+
+       <tr> <div class="skil">
+        <td><i class="cell">Time management</i></td>
+    <td> <input type="range" id="vol" name="TimeB" min="0" max="100"></td>
+    <td><input type="range" id="vol" name="TimeA" min="0" max="100"></td>
+       </div></tr>
+
+       <tr> <div class="skil">
+        <td><i class="cell">Distance</i></td>
+    <td> <input type="range" id="vol" name="DistanceB" min="0" max="100"></td>
+    <td><input type="range" id="vol" name="DistanceA" min="0" max="100"></td>
+       </div></tr>
+       
+       <tr> <div class="skil">
+        <td><i class="cell">Lack Of Time</i></td>
+    <td> <input type="range" id="vol" name="LackB" min="0" max="100"></td>
+    <td><input type="range" id="vol" name="LackA" min="0" max="100"></td>
+       </div></tr>
+
+       <tr> <div class="skil">
+        <td><i class="cell">Another</i></td>
+    <td> <input type="range" id="vol" name="AnotherB" min="0" max="100"></td>
+    <td><input type="range" id="vol" name="AnotherA" min="0" max="100"></td>
+       </div></tr>
+    
+</table>
+</td>
+<td>
+</fieldset>
+<fieldset style="margin-top: 15%; margin-left: 10%;">
+    <legend>Skills that will help me achieve my goal:</legend>
+    <table>
+
+        <tr> <div class="skil">
+            <td><input type="text" name="skil1" placeholder="My skill"></td>
+            <td> <input type="range" id="vol" name="skilr1" min="0" max="100"></td>
+         </div></tr>
+         <tr> <div class="skil">
+            <td><input type="text" name="skil2" placeholder="My skill"></td>
+            <td> <input type="range" id="vol" name="skilr2" min="0" max="100"></td>
+         </div></tr>
+         <tr> <div class="skil">
+            <td><input type="text" name="skil3" placeholder="My skill"></td>
+            <td> <input type="range" id="vol" name="skilr3" min="0" max="100"></td>
+         </div></tr>
+         <tr> <div class="skil">
+            <td><input type="text" name="skil4" placeholder="My skill"></td>
+            <td> <input type="range" id="vol" name="skilr4" min="0" max="100"></td>
+         </div></tr>
+         <tr> <div class="skil">
+            <td><input type="text" name="skil5" placeholder="My skill"></td>
+            <td> <input type="range" id="vol" name="skilr5" min="0" max="100"></td>
+         </div></tr>
+         <tr> <div class="skil">
+            <td><input type="text" name="skil6" placeholder="My skill"></td>
+            <td> <input type="range" id="vol" name="skilr6" min="0" max="100"></td>
+         </div></tr>
+    </table>
+</fieldset>
+</td>
+</tr>
+</table>
+<div><button type="submit" class="submit">Save</button></div>
+</form>
+
+{% endblock %}

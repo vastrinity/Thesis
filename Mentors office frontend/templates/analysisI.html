@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{%block content%}
+<style>
+  
+  button{
+  display: block;
+  margin: 0 auto;
+  width: 260px;
+  height: 36px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.submit{
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  background: -webkit-linear-gradient(left, #7579ff, #b224ef);
+}
+
+.submit:hover{
+  background: -webkit-linear-gradient(left, #b224ef, #7579ff);
+}
+
+.cell{
+ 
+  
+  font-size:medium;
+  
+  
+}
+.skil{
+    margin-top: 4%;
+}
+.tabl{
+text-align: center;
+padding-left: 40%;
+}
+
+</style>
+<form action="{{ url_for('analysisI') }}" method="post" style="margin: auto;">
+<table>
+    <tr>
+        <td>
+
+       
+<fieldset style="margin-top: 15%; margin-left:50%;border-radius: 5px;">
+    <legend>My progress to Analysis I:</legend>
+    
+    <table>
+
+        
+
+        <tr> <div class="skil">
+        <td><i class="cell">studytime</i></td>
+    <td> <input type="range" id="vol" name="studytime" min="0" max="10"></td>
+    
+       </div></tr>
+
+       <tr> <div class="skil">
+        <td><i class="cell">First Set</i></td>
+    <td> <input type="range" id="vol" name="FirstSet" min="0" max="100"></td>
+       </div></tr>
+
+       <tr> <div class="skil">
+        <td><i class="cell">Second Set</i></td>
+    <td> <input type="range" id="vol" name="SecondSet" min="0" max="100"></td>
+    
+       </div></tr>
+
+       <tr> <div class="skil">
+        <td><i class="cell">Absences</i></td>
+    <td> <input type="range" id="vol" name="absences" min="24" max="100"></td>
+    
+       </div></tr>
+
+    </table>
+       
+      
+    
+
+</fieldset>
+
+<div><button type="submit" class="submit">Save</button></div>
+</form>
+
+{% endblock %}

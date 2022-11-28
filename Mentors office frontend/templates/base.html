@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+   <style>
+    /*Colors*/
+/*Font*/
+/* Reset*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    background: -webkit-linear-gradient(left, #e8e8ec, #edd4f8);
+  margin: 0;
+  font-family: FontAwesome;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Start Style*/
+.main__menu {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+@media (max-width: 900px) {
+  .main__menu {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+  }
+}
+.main__menu .list-item:hover .drop-menu li {
+  display: block;
+}
+.main__menu .list-item:hover .menu-1 {
+  perspective: 1000px;
+}
+.main__menu .list-item:hover .menu-1 .drop-item {
+  opacity: 0;
+}
+.main__menu .list-item:hover .menu-1 .drop-item:nth-child(1) {
+  animation-name: leftToRight;
+  animation-duration: 400ms;
+  animation-delay: -150ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.main__menu .list-item:hover .menu-1 .drop-item:nth-child(2) {
+  animation-name: leftToRight;
+  animation-duration: 400ms;
+  animation-delay: 0ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.main__menu .list-item:hover .menu-1 .drop-item:nth-child(3) {
+  animation-name: leftToRight;
+  animation-duration: 400ms;
+  animation-delay: 150ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.main__menu .list-item:hover .menu-1 .drop-item:nth-child(4) {
+  animation-name: leftToRight;
+  animation-duration: 400ms;
+  animation-delay: 300ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.main__menu .list-item:hover .menu-2 {
+  perspective: 1000px;
+}
+.main__menu .list-item:hover .menu-2 .drop-item {
+  opacity: 0;
+  transform-origin: top center;
+}
+.main__menu .list-item:hover .menu-2 .drop-item:nth-child(1) {
+  animation-name: topToBottom;
+  animation-duration: 400ms;
+  animation-delay: -150ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.main__menu .list-item:hover .menu-2 .drop-item:nth-child(2) {
+  animation-name: topToBottom;
+  animation-duration: 400ms;
+  animation-delay: 0ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.main__menu .list-item:hover .menu-2 .drop-item:nth-child(3) {
+  animation-name: topToBottom;
+  animation-duration: 400ms;
+  animation-delay: 150ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.main__menu .list-item:hover .menu-2 .drop-item:nth-child(4) {
+  animation-name: topToBottom;
+  animation-duration: 400ms;
+  animation-delay: 300ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.main__menu .list-item:hover .menu-3 {
+  perspective: 1000px;
+}
+.main__menu .list-item:hover .menu-3 .drop-item {
+  opacity: 0;
+}
+.main__menu .list-item:hover .menu-3 .drop-item:nth-child(1) {
+  animation-name: itemBounce;
+  animation-duration: 400ms;
+  animation-delay: -150ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.main__menu .list-item:hover .menu-3 .drop-item:nth-child(2) {
+  animation-name: itemBounce;
+  animation-duration: 400ms;
+  animation-delay: 0ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.main__menu .list-item:hover .menu-3 .drop-item:nth-child(3) {
+  animation-name: itemBounce;
+  animation-duration: 400ms;
+  animation-delay: 150ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.main__menu .list-item:hover .menu-3 .drop-item:nth-child(4) {
+  animation-name: itemBounce;
+  animation-duration: 400ms;
+  animation-delay: 300ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.main__menu .list-item:hover .menu-4 {
+  perspective: 1000px;
+}
+.main__menu .list-item:hover .menu-4 .drop-item {
+  opacity: 0;
+  transform-origin: top right;
+}
+.main__menu .list-item:hover .menu-4 .drop-item:nth-child(1) {
+  animation-name: bottomToTop;
+  animation-duration: 400ms;
+  animation-delay: -150ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.main__menu .list-item:hover .menu-4 .drop-item:nth-child(2) {
+  animation-name: bottomToTop;
+  animation-duration: 400ms;
+  animation-delay: 0ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.main__menu .list-item:hover .menu-4 .drop-item:nth-child(3) {
+  animation-name: bottomToTop;
+  animation-duration: 400ms;
+  animation-delay: 150ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.main__menu .list-item:hover .menu-4 .drop-item:nth-child(4) {
+  animation-name: bottomToTop;
+  animation-duration: 400ms;
+  animation-delay: 300ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.main__menu .list-item:hover .home {
+  border-top: 6px solid #33658a;
+}
+.main__menu .list-item:hover .about {
+  border-top: 6px solid #9966cc;
+}
+.main__menu .list-item:hover .widget {
+  border-top: 6px solid #ff3333;
+}
+.main__menu .list-item:hover .kabobs {
+  border-top: 6px solid #ffcc33;
+}
+.main__menu .list-item:hover .contact {
+  border-top: 6px solid #55dde0;
+}
+.main__menu .list-item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100px;
+  color: #fff;
+  cursor: unset;
+}
+.main__menu .list-item a:hover {
+  cursor: pointer;
+}
+.main__menu .list-item a span {
+  font: 600 25px "Roboto", sans-serif;
+  order: 2;
+}
+.main__menu .list-item a img {
+  width: 100px;
+}
+.main__menu .list-item a.home {
+  background: #ff3333;
+}
+.main__menu .list-item a.about {
+  background: #ffcc33;
+}
+.main__menu .list-item a.widget {
+  background: #55dde0;
+}
+.main__menu .list-item a.kabobs {
+  background: #9966cc;
+}
+.main__menu .list-item a.contact {
+  background: #33658a;
+}
+.main__menu .list-item a i {
+  color: #fff;
+  font-size: 100px;
+}
+.main__menu .list-item .drop-menu .drop-item {
+  display: none;
+}
+.main__menu .list-item .drop-menu .drop-item a {
+  height: 80px;
+  font: 300 22px "Roboto", sans-serif;
+}
+.main__menu .list-item .drop-menu .drop-item a.item--1 {
+  background: #ffcc33;
+}
+.main__menu .list-item .drop-menu .drop-item a.item--2 {
+  background: #33658a;
+}
+.main__menu .list-item .drop-menu .drop-item a.item--3 {
+  background: #ff3333;
+}
+.center {
+  display: block;
+  margin-top: 2%;
+
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
+@keyframes leftToRight {
+  0% {
+    opacity: 0;
+    transform: rotateY(-90deg) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg) translateY(0px);
+  }
+}
+@keyframes topToBottom {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+@keyframes itemBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-60px);
+  }
+  80% {
+    transform: scale(1.2) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0px);
+  }
+}
+@keyframes bottomToTop {
+  0% {
+    opacity: 0;
+    transform: rotate(-30deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+   </style>
+    
+    <body>
+
+        <ul class="main__menu">
+            <li class="list-item">
+              <a href="{{ url_for('user_menu') }}"  class="home item--js">
+                <span>Home</span>
+                <i class="ion ion-ios-home-outline"></i>
+              </a>
+            </li>
+            <li class="list-item">
+              <a href="{{ url_for('goals') }}" class="about item--js">
+                <span>Goals</span>
+                <i class="ion ion-ios-contact-outline"></i>
+              </a>
+            </li>
+            <li class="list-item">
+              <a href="{{ url_for('reality') }}" class="kabobs item--js">
+                <span>Reality</span>
+                <i class="ion ion-ios-partly-sunny-outline"></i>
+              </a>
+             
+            </li>
+            <li class="list-item">
+              <a href="#" class="widget item--js">
+                <span>Options</span>
+                <i class="ion ion-ios-partly-sunny-outline"></i>
+              </a>
+              <ul class="drop-menu menu-4">
+                <li class="drop-item"><a href="{{ url_for('aboutyou') }}"  class="item--1">About you</a></li>
+                <li class="drop-item"><a href="{{ url_for('skills') }}"  class="item--2">Skills</a></li>
+                
+              </ul>
+            </li>
+           
+            <li class="list-item">
+              <a href="{{ url_for('will') }}" class="contact item--js">
+                <span>Will</span>
+                <i class="ion ion-ios-mail-open-outline"></i>
+              </a>
+            </li>
+           
+          </ul>
+          <div class="center">
+          <img src="{{url_for('static', filename='images/logo.png')}}"  />
+          </div>
+
+          {% if message  %}
+          <div class="alert alert-secondary" role="alert">
+              <p style="color:  #9966cc;">{{ message }}</p>
+          </div>
+        {% endif %}
+          {% block content %}{% endblock %}
+
+    </body>
+</html>

@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{%block content%}
+
+<style>
+     .main{
+    display: block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid rgba(139, 139, 139, .3);
+    color: #adadad;
+    border-radius: 25px;
+   
+    margin: auto;
+    padding: 2px 6px 2px 2px;
+    text-align: left;
+
+    height: 40%;
+    width: 30%;
+    }
+    .quote{
+    display: block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid rgba(139, 139, 139, .3);
+    color: #adadad;
+    border-radius: 25px;
+   
+    margin: auto;
+    padding: 2px 6px 2px 2px;
+    text-align: center;
+    margin-top: 5%;
+    height: 40%;
+    width: 30%;
+    }
+
+.progress {
+  background: rgba(255,255,255,0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  height: 40px;
+  width: 500px;
+}
+
+.progress-value-purple{
+  animation: load 3s normal forwards;
+  box-shadow: 0 10px 40px -10px #55dde0;
+  border-radius: 100px;
+  background: #9966cc;
+  height: 30px;
+  width: 0;
+}
+.progress-value-red{
+  animation: load 3s normal forwards;
+  box-shadow: 0 10px 40px -10px #55dde0;
+  border-radius: 100px;
+  background: #ff3333;
+  height: 30px;
+  width: 0;
+}
+.progress-value-blue{
+  animation: load 3s normal forwards;
+  box-shadow: 0 10px 40px -10px #55dde0;
+  border-radius: 100px;
+  background: #01A6B1;
+  height: 30px;
+  width: 0;
+}
+.progress-value-orange{
+  animation: load 3s normal forwards;
+  box-shadow: 0 10px 40px -10px  #55dde0;
+  border-radius: 100px;
+  background: #F05A29;
+  height: 30px;
+  width: 0;
+}
+
+
+@keyframes load {
+  0% { width: 0; }
+ 100% { width: 68%; }
+}
+</style>
+{% if message  %}
+<div class="alert alert-secondary" role="alert">
+    <p style="color:  #9966cc;">{{ message }}</p>
+</div>
+{% endif %}
+<form action="{{ url_for('user_menu') }}" >
+<table style="margin: auto; margin-top: 5%;">
+    <td>
+      <div>
+<fieldset class="main">
+    <div class="progress">
+   
+    <a href="{{ url_for('analysisI') }}" ><label for="1" style="margin-right: 2%;">Analysis I </label></a> <div id="1" class="progress-value-purple"></div>
+      </div>
+      <div class="progress">
+        <label for="2" style="margin-right: 2%;">JAVA </label><div id="2"class="progress-value-red"></div>
+      </div>
+      <div class="progress">
+        <label for="3" style="margin-right: 2%;">Statistics </label><div id="3" class="progress-value-blue"></div>
+      </div>
+      <div class="progress">
+        <label for="4" style="margin-right: 2%;">FinalYearProject </label><div id="4" class="progress-value-orange"></div>
+      </div>
+     </div>
+     <div>
+      <fieldset class="quote" >
+        <p>{{ quotes_found.quote }}</p>
+        <p>{{ quotes_found.Author }} <p>
+     
+     </fieldset>
+     
+     </div>
+
+    </td>
+    <td>
+<img src="{{url_for('static', filename='images/grow.png')}}"  />
+</td>
+
+
+
+</table>
+</form>
+{% endblock %}

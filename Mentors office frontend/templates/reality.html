@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{%block content%}
+<head>
+    <meta charset="UTF-8">
+    
+
+    <title>Goals</title>
+    <style>
+button{
+  display: block;
+  margin: 0 auto;
+  width: 260px;
+  height: 36px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.submit{
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  background: -webkit-linear-gradient(left, #7579ff, #b224ef);
+}
+
+.submit:hover{
+  background: -webkit-linear-gradient(left, #b224ef, #7579ff);
+}
+
+
+.container {
+    max-width: 640px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    
+}
+
+ul.ks-cboxtags {
+    list-style: none;
+    padding: 20px;
+}
+ul.ks-cboxtags li{
+  display: inline;
+}
+ul.ks-cboxtags li label{
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid rgba(139, 139, 139, .3);
+    color: #adadad;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li label {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+ul.ks-cboxtags li label::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 12px;
+    padding: 2px 6px 2px 2px;
+    content: "\f067";
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
+    content: "\f00c";
+    transform: rotate(-360deg);
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+    border: 2px solid #1bdbf8;
+    background-color: #12bbd4;
+    color: #fff;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+  display: absolute;
+}
+ul.ks-cboxtags li input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+ul.ks-cboxtags li input[type="checkbox"]:focus + label {
+  border: 2px solid #e9a1ff;
+}
+    </style>
+<form action="{{ url_for('reality') }}" method="post">
+<table style="margin-top: 15%; ">
+    <tr>
+        <td>
+<fieldset id="classes" style=" border-radius: 5px;">
+<legend for="classes"> I have already succeed in :</legend> 
+    <div class="container" >
+        <ul id="lessons" class="ks-cboxtags" name="lessons">
+          <li><input type="checkbox" name="lesson" id="AnalysisI" value="AnalysisI"><label for="AnalysisI">AnalysisI</label></li>
+          <li><input type="checkbox"  name="lesson" id="JAVA" value="JAVA" ><label for="JAVA">JAVA</label></li>
+          <li><input type="checkbox"  name="lesson" id="EducationalPsychology" value="EducationalPsychology" ><label for="EducationalPsychology">Educational Psychology</label></li>
+          <li><input type="checkbox"  name="lesson" id="DataStructures" value="DataStructures"><label for="DataStructures">Data Structures</label></li>
+          <li><input type="checkbox"  name="lesson" id="Statistics" value="Statistics"><label for="Statistics">Statistics</label></li>
+          <li><input type="checkbox"  name="lesson" id="AlgorithmsComplexity" value="AlgorithmsComplexity" ><label for="AlgorithmsComplexity">Algorithms Complexity </label></li>
+          <li><input type="checkbox"  name="lesson" id="ArtificialIntelligence" value="ArtificialIntelligence"><label for="ArtificialIntelligence">Artificial Intelligence</label></li>
+          <li><input type="checkbox" name="lesson"  id="DigitalCommunications" value="DigitalCommunications"><label for="DigitalCommunications">Digital Communications</label></li>
+          <li><input type="checkbox" name="lesson"  id="IT_CentricProfessionalDevelopment" value="IT_CentricProfessionalDevelopment"><label for="IT_CentricProfessionalDevelopment">IT_Centric Professional Development
+                          </label></li>
+          <li><input type="checkbox" name="lesson" id="FinalYearProject" value="FinalYearProject"><label for="FinalYearProject">Final Year Project</label></li>
+         
+        </ul>
+      
+      </div>
+    </fieldset>
+</td>
+<td>
+
+             
+                
+           
+    
+
+
+
+           <fieldset id="problems"  style=" border-radius: 5px;">
+                <legend>what made it difficult for me to achieve my goals was :</legend>
+                <div class="container" >
+                    <ul id="problems" class="ks-cboxtags" name="problems">
+                      <li><input type="checkbox" name="problem" id="stress" value="stress"><label for="stress">stress</label></li>
+                      <li><input type="checkbox"  name="problem" id="LuckOfKnowledge" value="LuckOfKnowledge" ><label for="LuckOfKnowledge">Luck Of Knowledge</label></li>
+                      <li><input type="checkbox"  name="problem" id="timeManagement" value="timeManagement" ><label for="timeManagement">Time management </label></li>
+                      <li><input type="checkbox"  name="problem" id="distance" value="distance"><label for="distance">Distance</label></li>
+                      <li><input type="checkbox"  name="problem" id="lackOfTime" value="lackOfTime"><label for="lackOfTime">Lack Of Time</label></li>
+                      <li><input type="checkbox"  name="problem" id="another" value="another" ><label for="another">Another </label></li>
+                      
+                     
+                    </ul>
+                  
+                  </div>
+               
+            </fieldset>
+       
+            <fieldset style="margin-top:4%; border-radius: 5px;" >
+                <legend >Last time i was giving exams was :</legend>
+                <select name="lastTime" id="lastTime" >
+                    <option value="thisyear" selected>This year</option>
+                        <option value="lastyear">Last year</option>
+                        <option value="longtime">It's been a long time</option>
+                </select>
+            
+            </fieldset>
+            
+
+       
+</td>
+</tr>
+
+</table> 
+<div><button type="submit" class="submit">save</button></div>
+
+
+</form>
+  
+{% endblock %}
